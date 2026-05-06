@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Chat</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="/static/index.css">
+</head>
+<body>
+    <main class="bg-[rgb(88,88,92)] h-[100dvh] text-white flex flex-col">
+        <div class="bg-[rgb(44,44,46)] md:px-12 px-4 py-3 flex items-center justify-between">
+            <a href="/" class="text-3xl">Live Chat</a>
+
+            <nav class="flex items-center gap-8">
+                <p class="text-lg font-medium">Hi {{ user.username }}!</p>
+                <a class="text-lg text-red-600 font-medium hover:underline" href="{{ url_for('auth.logout') }}">Logout</a>
+            </nav>
+        </div>
+        
+        <div class="bg-[rgb(66,66,69)] relative flex flex-col mx-auto md:w-[60vw] h-full w-full overflow-hidden">
+            <!-- Messages -->
+            <div class="px-2 pb-25 flex flex-col grow-1 overflow-y-auto no-scrollbar" id="msg_reel"></div>
+            
+            <!-- Send -->
+            <form id="msg_form" action="#" class="bg-[rgb(44,44,46)] absolute w-[95%] px-3 py-4 left-1/2 bottom-2 -translate-x-1/2 flex gap-3 rounded-md">
+                <input type="text" id="msg_input" class="px-4 py-4 rounded-md grow-1 bg-[rgba(65,65,65,0.8)] focus:outline-[rgb(35,100,190)] focus:outline-[1px] resize-none" placeholder="Message" autocomplete="off" />
+                <button type="submit" class="px-4 shrink-0 border-[1px] border-[rgb(35,100,190)] hover:bg-[rgb(35,100,190)] rounded-md cursor-pointer transition-all duration-200">
+                    <i data-lucide="send"></i>
+                </button>
+            </form>
+        </div>
+    </main>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
+    <script src="/static/index.js"></script>
+</body>
+</html>

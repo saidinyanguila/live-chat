@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Chat | Login</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <main class="h-screen bg-[rgb(44,44,46)] text-white">
+        <div class="flex items-center justify-center h-full w-full">
+            <div class="bg-[rgb(22,22,23)] md:h-[85vh] h-full aspect-[7/4] flex md:rounded-md overflow-hidden">
+                <div class="md:block hidden w-[50%] bg-red-200"></div>
+
+                <form action=""  method="post" class="flex flex-col justify-center gap-10 md:w-[50%] w-full py-6">
+                    <div class="text-center">
+                        <p class="text-3xl font-medium mb-2 letterspace-10 tracking-wide">Login</p>
+                        <p class="text-sm text-[rgb(200,200,200)]">Get back into your account and continue chatting.</p>
+                    </div>
+                    
+                    <div class="flex flex-col gap-5 px-9">
+                        <div class="relative w-full">
+                            <input name="login_id" id="login_id" type="text" class="pl-10 pr-4 py-3 rounded-md w-full bg-[rgba(65,65,65,0.8)] focus:outline-[rgb(35,100,190)] focus:outline-[2px]" placeholder="Username" required>
+                            <i class="absolute left-2 top-[50%] -translate-y-1/2" data-lucide="user"></i>
+                        </div>
+
+                        <div class="relative w-full">
+                            <input name="login_password" id="login_password" type="text" class="pl-10 pr-4 py-3 rounded-md w-full bg-[rgba(65,65,65,0.8)] focus:outline-[rgb(35,100,190)] focus:outline-[2px]" placeholder="Password" required>
+                            <i class="absolute left-2 top-[50%] -translate-y-1/2" data-lucide="lock"></i>
+                        </div>
+
+                        <div class="w-full flex items-center justify-between">
+                            <a class="text-[13px]" href="{{ url_for('auth.sign_up') }}">Don't have an account?</a>
+                            <a class="text-[13px]" href="#">Forgot Password?</a>
+                        </div>
+                    </div>
+                    
+                    <div class="">
+                        <button type="submit" class="block mx-auto px-4 py-3 rounded-md w-60 bg-[rgba(65,65,65,0.8)] cursor-pointer">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
