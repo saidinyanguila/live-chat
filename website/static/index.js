@@ -46,7 +46,7 @@ function recieve_message(data) {
 const msg_form = document.getElementById("msg_form");
 
 msg_form.addEventListener("submit", (e) => {
-    e.preventDefault;
+    e.preventDefault();
 
     let msgInput = document.getElementById("msg_input");
     let message = msgInput.value;
